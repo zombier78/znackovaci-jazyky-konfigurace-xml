@@ -1,0 +1,216 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="konfigurace_fsx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="graphicsSettingsPreset"/>
+        <xs:element type="xs:string" name="realismPreset"/>
+        <xs:element type="xs:string" name="weatherPreset"/>
+        <xs:element name="gameSettings">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="mainSettings">
+                <xs:annotation>
+                  <xs:documentation>Globalni nastaveni hry</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="userObjects">
+                      <xs:annotation>
+                        <xs:documentation>Hlavni nastaveni</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="airplane"/>
+                          <xs:element type="xs:byte" name="helicopter"/>
+                          <xs:element type="xs:byte" name="groundVehicles"/>
+                          <xs:element type="xs:byte" name="boats"/>
+                          <xs:element type="xs:byte" name="miscellaneous"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="defaultLocation"/>
+                    <xs:element type="xs:string" name="language"/>
+                    <xs:element type="xs:string" name="measureSystem"/>
+                    <xs:element type="xs:byte" name="flyingTips"/>
+                    <xs:element type="xs:byte" name="frameLimiter"/>
+                    <xs:element type="xs:byte" name="recordFlight"/>
+                    <xs:element name="multiplayerSettings">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="username"/>
+                          <xs:element type="xs:string" name="password"/>
+                          <xs:element type="xs:byte" name="savePassword"/>
+                          <xs:element type="xs:string" name="defaultServerIp"/>
+                          <xs:element type="xs:byte" name="shareCockpit"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="sound">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="music"/>
+                    <xs:element type="xs:byte" name="sounds"/>
+                    <xs:element type="xs:byte" name="soundQuality"/>
+                    <xs:element type="xs:byte" name="volume"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="display">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="menuHideDefault"/>
+                    <xs:element type="xs:byte" name="infoOverspeed"/>
+                    <xs:element type="xs:byte" name="infoParkingBrakes"/>
+                    <xs:element type="xs:byte" name="infoPause"/>
+                    <xs:element type="xs:byte" name="infoStall"/>
+                    <xs:element type="xs:byte" name="fullscreen"/>
+                    <xs:element type="xs:byte" name="descendGuideLine"/>
+                    <xs:element name="views">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="cockpit3d"/>
+                          <xs:element type="xs:byte" name="thirdPersonViewEnable"/>
+                          <xs:element type="xs:byte" name="newWindowEnable"/>
+                          <xs:element type="xs:byte" name="changeWindowSizeEnable"/>
+                          <xs:element type="xs:byte" name="defaultView"/>
+                          <xs:element type="xs:string" name="defaultCockpitCameraPosition"/>
+                          <xs:element type="xs:byte" name="cockpitMovementSpeed"/>
+                          <xs:element type="xs:byte" name="showCockpitTooltips"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="controls">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="joystickEnable"/>
+                    <xs:element type="xs:byte" name="mouseControlEnable"/>
+                    <xs:element type="xs:string" name="defaultControls"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="atc">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="AtcVoice"/>
+                    <xs:element type="xs:byte" name="showOnStart"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="graphics" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:short" name="textureMaxLoad"/>
+                    <xs:element type="xs:byte" name="aircraftLightsQuality"/>
+                    <xs:element type="xs:byte" name="aircraftShadows"/>
+                    <xs:element type="xs:byte" name="aircraftReflections"/>
+                    <xs:element type="xs:byte" name="cockpitHighRes"/>
+                    <xs:element type="xs:byte" name="landingLights"/>
+                    <xs:element type="xs:byte" name="aircraftSelfShadowEnable"/>
+                    <xs:element type="xs:byte" name="effectsQuality"/>
+                    <xs:element type="xs:byte" name="groundShadows"/>
+                    <xs:element type="xs:byte" name="textureQuality"/>
+                    <xs:element type="xs:byte" name="d3d10"/>
+                    <xs:element type="xs:byte" name="antialiasing"/>
+                    <xs:element type="xs:byte" name="anisotropic"/>
+                    <xs:element type="xs:byte" name="bilinear"/>
+                    <xs:element type="xs:byte" name="trilinear"/>
+                    <xs:element type="xs:string" name="resolution"/>
+                    <xs:element type="xs:byte" name="bloom"/>
+                    <xs:element type="xs:byte" name="lensFlare"/>
+                    <xs:element type="xs:byte" name="panelsQuality"/>
+                    <xs:element type="xs:byte" name="cloudQuality"/>
+                    <xs:element type="xs:short" name="cloudDrawDistance"/>
+                    <xs:element type="xs:byte" name="cloudCoverageDensity"/>
+                    <xs:element type="xs:byte" name="terrainResolution"/>
+                    <xs:element type="xs:byte" name="sceneryDensity"/>
+                    <xs:element type="xs:byte" name="roadVehicleDensity"/>
+                    <xs:element type="xs:byte" name="boatDensity"/>
+                    <xs:element type="xs:byte" name="airlineTrafficDensity"/>
+                    <xs:element type="xs:byte" name="airportGroundVehiclesDensity"/>
+                    <xs:element type="xs:byte" name="waterReflections"/>
+                    <xs:element type="xs:byte" name="waveRippleEffect"/>
+                    <xs:element type="xs:byte" name="advancedAnimations"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="preset" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="realism" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="realismLevel"/>
+                    <xs:element type="xs:byte" name="crashesAllow"/>
+                    <xs:element type="xs:byte" name="aircraftStressAllow"/>
+                    <xs:element type="xs:byte" name="overspeedAllow"/>
+                    <xs:element type="xs:byte" name="collisionsAllow"/>
+                    <xs:element type="xs:byte" name="automaticMixtureEnable"/>
+                    <xs:element type="xs:byte" name="autoTrim"/>
+                    <xs:element type="xs:byte" name="failureManagerEnable"/>
+                    <xs:element type="xs:byte" name="randomFailureEnable"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="preset" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="weather" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="downloadRealData"/>
+                    <xs:element type="xs:byte" name="turbulenceEnable"/>
+                    <xs:element type="xs:byte" name="windMinKt"/>
+                    <xs:element type="xs:byte" name="windMaxKt"/>
+                    <xs:element type="xs:byte" name="windShearEnable"/>
+                    <xs:element type="xs:byte" name="gustsMinKt"/>
+                    <xs:element type="xs:byte" name="gustsMaxKt"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="preset" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="gameSave">
+          <xs:annotation>
+            <xs:documentation>Konec globálních nastavení, začátek konkrétního savu...
+souřadnice jsou reálné, ale nekontroloval jsem jejich pozice vzhledem k letadlům, takže je možné, že některé letadlo se nachází na hladině oceánu</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nearAircraftPositions">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="aircraft" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="type"/>
+                          <xs:element name="position">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:float" name="latitude"/>
+                                <xs:element type="xs:float" name="longtitude"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element type="xs:int" name="altitude"/>
+                          <xs:element type="xs:short" name="speed"/>
+                          <xs:element type="xs:short" name="heading"/>
+                          <xs:element type="xs:byte" name="ifrRules"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="code" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+

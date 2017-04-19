@@ -1,0 +1,194 @@
+	<!DOCTYPE html>
+	<html lang="cs>"
+	<head>
+	<title>Dokumentace</title>
+	<meta charset="utf-8" />
+	</head>
+	<body style="background-color:#003300;color:white">
+		<header>
+			<nav>
+				<a href="/" style="color:white">Domù</a><br>
+				<a href="https://github.com/zombier78/znackovaci-jazyky-konfigurace-xml" style="color:red"> David Sochor - ODKAZ NA GITHUB </a>
+			</nav>
+		</header>
+		<main>
+			<article>
+				<header>
+				<h1>Dokumentace k aplikaci: Konfigurace leteckého simulátoru FSX</h1>
+				<nav id="menu">
+				<ul>
+				<a href="#uvod" style="color:lightblue">Úvod</a><br>
+				<a href="#metodika" style="color:lightblue">Metodika</a><br>
+				<a href="#zaver" style="color:lightblue">Závěr</a>
+				</ul>
+				</nav>
+				<img src="http://www.avsim.com/pages/0106/FSX/fsx012.jpg" align="right" align="top" style="width:500px"></img>
+				</header>
+				<section>
+					<h2 id="uvod" style="text-decoration:underline"> Úvod </h2>
+					<h3>Celkový popis aplikace</h3>
+					<p>Jako semestrální práci jsem si vytvořil konfiguraci existujícího leteckého simulátoru FSX. Nastavení aplikace jsou odvozená z reálných dat, 
+						ovšem hodnoty jsou vymyšlené. Save hry je vymyšlený kompletně.</p>
+					<p>
+					<i>
+						Bohužel se mi nepovedlo vytvořit transformaci do HTML(vytvořeno ručně), ale podařilo se mi transformovat samotný XML soubor, což považuji také za úspěch.
+					</i>
+					</p>
+				</section>
+				<section>
+					<h3>Popis jednotlivých elementů, popř. atributů</h3>
+					<p>Soubor by se dal rozdělit na několik částí:<br>
+						<ol>
+							<li>Úvod s presety(atributy - přednastavená grafika apod.) - v tomto případě nastavena střední grafika, nejtěžší obtížnost a větrné počasí</li>
+							<li>Nastavení hry
+								<ol>
+									<li>Hlavní nastavení
+									<ul>
+									<li>Ovladatelné stroje</li>
+									<li>Různá nastavení(jazyk, výchozí lokace..)</li>
+									<li>multiplayer</li>
+									</ul>
+									</li>
+									<li>Nastavení zvuku</li>
+									<li>Nastavení displeje(info na obrazovce atd.)
+									<ul>
+										<li>Různá nastavení</li>
+										<li>Pohledy(kokpit, pohled třetí osoby apod.)</li>
+									</ul>
+									</li>
+									<li>Nastavení ovládání</li>
+									<li>Grafika</li>
+									<li>Realističnost</li>
+									<li>Počasí</li>
+								</ol>
+							</li>
+							<li>Save hry - pozice letadel, která byla načtena v době uložení (blízko); rozdělena podle kódu letu(atribut)
+								<ol>
+									<li>Typ letadla</li>
+									<li>Pozice letadla(vybraná random generátorem souřadnic) - složena ze:</li>
+										<ul>
+											<li>Zeměpisné šířky</li>
+											<li>Zeměpisné délky</li>
+										</ul>
+									<li>Nadmořská výška</li>
+									<li>Rychlost</li>
+									<li>Směr letu</li>
+									<li>Používá IFR(instrument flight rules) ano/ne</li>
+								</ol>
+							</li>
+						</ol>
+					</p>
+				<section>
+					<h2 id="metodika" style="text-decoration:underline"> Metodika </h2>
+					<h3>Použité nástroje</h3>
+					<p>V práci jsem použil online návod na <a href="https://www.w3schools.com" style="color:lightgreen">https://www.w3schools.com</a> a k tomu nástroje:<br>
+					<ul>
+						<li>Generátor náhodných souřadnic <a href="https://www.random.org/geographic-coordinates/" style="color:lightgreen">https://www.random.org/geographic-coordinates/</a></li>
+						<li>XML validátor <a href="http://www.xmlvalidation.com/" style="color:lightgreen">http://www.xmlvalidation.com/</a></li>
+						<li>XSD generátor <a href="http://www.freeformatter.com/xsd-generator.html" style="color:lightgreen">http://www.freeformatter.com/xsd-generator.html</a></li>
+						<li>Textový editor: <div style="color:blue"></i>Sublime text 2</i><div></li>
+						<li>Internetový prohlížeč: <div style="color:red"></i>Mozzila Firefox</i><div></li>
+					</ul>
+					</p>
+					<a href="#menu" style="color:lightblue"> Návrat do menu </a>
+				</section>
+						<h2>Vzhled tabulky vypsané v fsx.XSLT souboru:</h2>
+							  <table border="1">
+							    <tr bgcolor="#9acd32">
+							      <th>Callsign</th>
+							      <th>Aircraft type</th>
+							      <th>Aircraft position</th>
+							      <th>Aircraft heading</th>
+							      <th>Aircraft speed</th>
+							      <th>Aircraft altitude</th>
+							    </tr>
+							    <tr>
+							      <td>OK4147</td>
+							      <td>B747</td>
+							      <td>30.54746; -30.19211</td>
+							      <td>145</td>
+							      <td>320</td>
+							      <td>40000</td>
+							    </tr>
+			    				  <tr>
+							      <td>BAE151</td>
+							      <td>A380</td>
+							      <td>-32.01601; -133.19577</td>
+							      <td>035</td>
+							      <td>300</td>
+							      <td>25500</td>
+							    </tr>
+				     		    <tr>
+							      <td>UAE154</td>
+							      <td>B737</td>
+							      <td>34.55969; 39.30717</td>
+							      <td>012</td>
+							      <td>200</td>
+							      <td>5000</td>
+							    </tr>
+		    				    <tr>
+							      <td>OK1544</td>
+							      <td>CSN72</td>
+							      <td>-6.79245; 40.09053</td>
+							      <td>350</td>
+							      <td>0</td>
+							      <td>0</td>
+							    </tr>
+		    				     <tr>
+							      <td>OK7144</td>
+							      <td>CSN152</td>
+							      <td>-33.40425; 33.41247</td>
+							      <td>245</td>
+							      <td>0</td>
+							      <td>0</td>
+							    </tr>
+							     <tr>
+							      <td>CSA471</td>
+							      <td>A380</td>
+							      <td>-17.79085; -49.70423</td>
+							      <td>012</td>
+							      <td>140</td>
+							      <td>0</td>
+							    </tr> 
+		    				    <tr>
+							      <td>MY4784</td>
+							      <td>A319</td>
+							      <td>-52.94084; 26.41980</td>
+							      <td>310</td>
+							      <td>160</td>
+							      <td>3000</td>
+							    </tr>
+		    				    <tr>
+							      <td>TS1478</td>
+							      <td>A320</td>
+							      <td>-55.22637; -169.20571</td>
+							      <td>120</td>
+							      <td>240</td>
+							      <td>10000</td>
+							    </tr>
+							  </table><br><div style="padding-left:300px">Vysvětlivky</div>
+							  <table border="1">
+								    <tr>
+							    	<td>(kód letu)</td>
+							    	<td>(typ letadla)</td>
+							    	<td>(pozice letadla - souřadnice)</td>
+							    	<td>(směr letadla)</td>
+							    	<td>(rychlost letadla)</td>
+							    	<td>(výška letadla)</td>
+							    </tr>
+							</table>
+			</article>
+			<h2 id="zaver" style="text-decoration:underline">Závěr</h2>
+			<p>Závěrem mohu říct jen to, že jsem se naučil základy XML, které jsem viděl poprvé, a mohl bych být nyní schopný vytvořit jednoduché datové/konfigurační soubory.To samé platí pro XSD a XSLT.</p>
+			<a href="#menu" style="color:lightblue"> Návrat do menu </a>
+		</main>
+		<br>
+		<footer>
+		Copyright®2017 David Sochor. All rights reserved.
+		</footer>
+		<br>
+		<aside>
+			<h4><i>Autor: David Sochor </i></h4><br>
+		</aside>
+	</body>
+	</html>
